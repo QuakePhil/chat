@@ -12,22 +12,15 @@ var server = https.createServer(options).listen(1337, function() {
   console.log('Listening');
 });
 
-// create the server
-wss = new WebSocketServer({
-  httpServer: server
-});
+wss = new WebSocketServer({ httpServer: server });
 
-// WebSocket server
 wss.on('request', function(request) {
   console.log('Request');
   var connection = request.accept(null, request.origin);
 
-  // This is the most important callback for us, we'll handle
-  // all messages from users here.
   connection.on('message', function(message) {
     if (message.type === 'utf8') {
-      // process WebSocket message
-      chat.update(request, message);
+      chat.update(request, message.utf8Data);
     }
   });
 

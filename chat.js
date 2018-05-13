@@ -13,7 +13,7 @@ module.exports = {
       Item: {
         'author':  {S: request.remoteAddress },
         'time':    {S: (new Date()).toISOString() },
-        'message': {S: message.utf8Data },
+        'message': {S: message },
       }
     };
 
