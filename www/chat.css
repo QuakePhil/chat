@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #main {
+  height : auto !important; /* Ignored by Internet Explorer, applied everywhere else. */
+  height : 100%;            /* Internet Explorer treats as min-height. */
+  min-height : 100%;        /* Internet Explorer ignores this. */
+}
+
+#chat {
+  background-color: hsla(240, 25%, 75%, 1);
+}
+
+/*
+  position: absolute;
+  bottom: 22px;
+  width: 100%;
+  overflow-y: scroll;
+
+  position: relative;
+  height: auto;
+#full-height {
+
+}
+*/
+
+#footer {
+  display: table;
+}
+
+#inputbox, #footer span {
+  width: 100%;
+  display: table-cell;
+}
